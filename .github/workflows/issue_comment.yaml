@@ -28,3 +28,5 @@ jobs:
       - name: create comment with api
         run: |
           gh api -X POST -f body="This is a test comment" https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments
+        env:
+          GH_TOKEN: "${{ secrets.GH_TOKEN }}"
